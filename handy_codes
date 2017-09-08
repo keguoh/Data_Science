@@ -1,0 +1,36 @@
+# Summarize missing values
+sapply(data_frame, function(x) sum(is.na(x)))
+apply(is.na(data_frame),2,sum)
+colSums(is.na(data_frame))
+sapply(input, function(x) any(is.na(x)))
+
+propmiss <- function(dataframe) {
+	m <- sapply(dataframe, function(x) {
+		data.frame(
+			nmiss=sum(is.na(x)), 
+			n=length(x), 
+			propmiss=sum(is.na(x))/length(x)
+		)
+	})
+	d <- data.frame(t(m))
+	d <- sapply(d, unlist)
+	d <- as.data.frame(d)
+	d$variable <- row.names(d)
+	row.names(d) <- NULL
+	d <- cbind(d[ncol(d)],d[-ncol(d)])
+	return(d[order(d$propmiss), ])
+}
+
+
+
+# interaction of two categorical variables
+paste(mydata$gender, mydata$country,sep=" ")
+
+# create a vector of values based on another vector
+# https://stackoverflow.com/questions/18456968/how-do-i-map-a-vector-of-values-to-another-vector-with-my-own-custom-map-in-r?noredirect=1&lq=1
+install.packages("hash")
+library(hash)
+h<-hash(1:3, c(.2,.4,.5))
+myVector<-c(1,2,3,2,3,3,1)
+sapply(myVector,function(x){return(h[[as.character(x)]])})
+
