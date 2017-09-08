@@ -1,0 +1,14 @@
+Error in randomForest.default(m, y, ...) : 
+  NA/NaN/Inf in foreign function call (arg 1)
+  
+SOLUTION:  change char to factor
+
+
+Error in eval(expr, envir, enclos) : object 'FAM-HOM_FAM' not found
+Error in na.fail.default(list(CALLS = c(NA_integer_, NA_integer_, NA_integer_,  : 
+  missing values in object
+
+SOLUTION: the data may not be in a good shape, use as.data.frame
+
+Error in eval(expr, envir, enclos) : object 'FAM-HOM_FAM' not found
+SOLUTION: hyphon '-' should not appear in the colnames
