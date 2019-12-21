@@ -1,0 +1,28 @@
+# sklearn functions
+from sklearn.model_selection import train_test_split
+
+from sklearn.feature_extraction.text import CountVectorizer
+from sklearn.feature_extraction.text import TfidfVectorizer
+
+from sklearn.linear_model import LogisticRegression
+from sklearn.naive_bayes import MultinomialNB
+from sklearn.svm import SVC
+
+from sklearn.metrics import roc_auc_score
+from sklearn.metrics import accuracy_score
+
+# Sort list of tuples
+from operator import itemgetter
+list_tuple = list(zip(list1, list2))
+highest = sorted(list_tuple, key=itemgetter(1), reverse=True)[:20]
+
+series.name=None
+ndarrar.argsort()
+
+# create a new column 
+df['Discounted_Price'] = df['Cost'] - (0.1 * df['Cost']) 
+df['Discounted_Price'] = df.apply(lambda row: row.Cost - 
+                                  (row.Cost * 0.1), axis = 1) 
+								  
+# ifelse
+np.where(a == b, 1, 0)								  
